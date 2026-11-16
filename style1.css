@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("pexels-adrien-olichon-1257089-2387532.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.glass {
+    width: 480px;
+    padding: 90px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: 0.4s ease;
+}
+
+.glass:hover {
+     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.22);
+}
+
+h1 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: white;
+    margin-bottom: 65px;
+    font-style: italic;
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: rgb(188, 188, 188);
+    color: #1f5bbd;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}

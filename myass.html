@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskVault - My Assignments</title>
+
+    <link rel="stylesheet" href="myass.css" />
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <!-- SIDEBAR -->
+      <aside class="sidebar glass">
+        <h2 class="logo">TaskVault</h2>
+
+        <div class="profile">
+          <div class="profile-icon">👤</div>
+          <h3 id="studentGreeting">Hello, Student!</h3>
+          <p>Welcome back</p>
+        </div>
+
+        <nav>
+          <a href="student_dash.html">🏠 Dashboard</a>
+          <a href="myass.html" class="active">📚 My Assignments</a>
+          <a href="add.html">➕ Add Task</a>
+          <a href="cal.html">📅 Calendar</a>
+          <a href="set.html">⚙️ Settings</a>
+        </nav>
+
+        <a href="home.html" class="logout" id="logoutButton"> ↪ Log Out </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <header class="header">
+          <div>
+            <h1>My Assignments</h1>
+            <p>Manage and monitor all your school activities.</p>
+          </div>
+
+          <a href="add.html" class="add-button"> + Add New Task </a>
+        </header>
+
+        <!-- SUMMARY -->
+        <section class="summary">
+          <div class="summary-card glass">
+            <span>📚</span>
+            <h2 id="totalTasks">0</h2>
+            <p>Total Assignments</p>
+          </div>
+
+          <div class="summary-card glass">
+            <span>⏳</span>
+            <h2 id="pendingTasks">0</h2>
+            <p>Pending</p>
+          </div>
+
+          <div class="summary-card glass">
+            <span>🔄</span>
+            <h2 id="progressTasks">0</h2>
+            <p>In Progress</p>
+          </div>
+
+          <div class="summary-card glass">
+            <span>✅</span>
+            <h2 id="completedTasks">0</h2>
+            <p>Completed</p>
+          </div>
+        </section>
+
+        <!-- SEARCH AND FILTER -->
+        <section class="filter-section glass">
+          <input
+            type="text"
+            id="searchTask"
+            placeholder="🔍 Search assignments..."
+          />
+
+          <select id="subjectFilter">
+            <option value="all">All Subjects</option>
+            <option value="Programming">Programming</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="English">English</option>
+            <option value="History">History</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <select id="statusFilter">
+            <option value="all">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </section>
+
+        <!-- ASSIGNMENTS -->
+        <section class="assignment-container">
+          <div class="section-title">
+            <h2>📚 All Assignments</h2>
+            <p>Here are all your saved school activities.</p>
+          </div>
+
+          <div id="assignmentList"></div>
+        </section>
+
+        <footer>
+          <p>2026 TaskVault | Student Task Management System</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="myass.js"></script>
+  </body>
+</html>

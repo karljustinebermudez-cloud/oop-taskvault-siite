@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskVault - Add Task</title>
+
+    <link rel="stylesheet" href="add.css" />
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <aside class="sidebar glass">
+        <h2 class="logo">TaskVault</h2>
+
+        <div class="profile">
+          <div class="profile-icon">👤</div>
+          <h3 id="studentGreeting">Hello, Student!</h3>
+          <p>Welcome back</p>
+        </div>
+
+        <nav>
+          <a href="student_dash.html">🏠 Dashboard</a>
+          <a href="myass.html">📚 My Assignments</a>
+          <a href="add.html" class="active">➕ Add Task</a>
+          <a href="cal.html">📅 Calendar</a>
+          <a href="set.html">⚙️ Settings</a>
+        </nav>
+
+        <a href="home.html" class="logout" id="logoutButton"> ↪ Log Out </a>
+      </aside>
+
+      <main class="main-content">
+        <header class="header">
+          <h1>Add New Task</h1>
+
+          <p>Save your school activities and never miss a deadline.</p>
+        </header>
+
+        <section class="form-container glass">
+          <div class="form-title">
+            <h2>📝 Assignment Information</h2>
+
+            <p>Fill in the details of your school activity.</p>
+          </div>
+
+          <form id="taskForm">
+            <div class="form-group">
+              <label for="title">Assignment Title</label>
+
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Enter assignment title"
+                maxlength="100"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+
+              <select id="subject" name="subject" required>
+                <option value="">Select Subject</option>
+
+                <option value="Programming">Computer Programming</option>
+
+                <option value="Mathematics">Mathematics</option>
+
+                <option value="Science">Science</option>
+
+                <option value="English">English</option>
+
+                <option value="History">History</option>
+
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+
+              <textarea
+                id="description"
+                name="description"
+                rows="5"
+                maxlength="1000"
+                placeholder="Describe your assignment..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="deadline">Deadline</label>
+
+              <input type="date" id="deadline" name="deadline" required />
+            </div>
+
+            <div class="form-group">
+              <label for="priority">Priority Level</label>
+
+              <select id="priority" name="priority" required>
+                <option value="">Select Priority</option>
+
+                <option value="low">Low</option>
+
+                <option value="medium">Medium</option>
+
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="save-button">💾 Save Task</button>
+
+              <button type="reset" class="clear-button">Clear Form</button>
+            </div>
+
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <footer>
+          <p>© 2026 TaskVault | Student Task Management System</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="add.js"></script>
+  </body>
+</html>

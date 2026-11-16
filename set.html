@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskVault - Settings</title>
+
+    <link rel="stylesheet" href="set.css" />
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <!-- SIDEBAR -->
+      <aside class="sidebar glass">
+        <h2 class="logo">TaskVault</h2>
+
+        <div class="profile">
+          <div class="profile-icon">👤</div>
+          <h3 id="studentGreeting">Hello, Student!</h3>
+          <p>Welcome back</p>
+        </div>
+
+        <nav>
+          <a href="student_dash.html">🏠 Dashboard</a>
+          <a href="myass.html">📚 My Assignments</a>
+          <a href="add.html">➕ Add Task</a>
+          <a href="cal.html">📅 Calendar</a>
+          <a href="set.html" class="active">⚙️ Settings</a>
+        </nav>
+
+        <a href="home.html" class="logout" id="sidebarLogout"> ↪ Log Out </a>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <header class="header">
+          <h1>Settings</h1>
+          <p>Manage your account and customize your TaskVault experience.</p>
+        </header>
+
+        <!-- PROFILE SETTINGS -->
+        <section class="settings-card glass">
+          <div class="section-title">
+            <h2>👤 Profile Information</h2>
+            <p>Manage your personal information.</p>
+          </div>
+
+          <form id="profileForm">
+            <div class="profile-picture">
+              <div class="avatar">👤</div>
+
+              <div>
+                <h3>Student Profile</h3>
+                <p>Manage your account information below.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+
+              <input
+                type="text"
+                id="fullname"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="studentID">Student ID</label>
+
+              <input
+                type="text"
+                id="studentID"
+                placeholder="Enter your student ID"
+                required
+              />
+            </div>
+
+            <button type="submit" class="save-button">💾 Save Changes</button>
+
+            <p id="profileMessage" class="message" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- NOTIFICATION SETTINGS -->
+        <section class="settings-card glass">
+          <div class="section-title">
+            <h2>🔔 Notification Settings</h2>
+            <p>Choose which reminders you want to enable.</p>
+          </div>
+
+          <div class="setting-option">
+            <div>
+              <h3>Deadline Reminders</h3>
+              <p>Enable reminders about upcoming assignments.</p>
+            </div>
+
+            <label class="switch">
+              <input type="checkbox" id="deadlineReminder" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-option">
+            <div>
+              <h3>Overdue Task Alerts</h3>
+              <p>Enable alerts for assignments past their deadline.</p>
+            </div>
+
+            <label class="switch">
+              <input type="checkbox" id="overdueReminder" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-option">
+            <div>
+              <h3>Daily Reminders</h3>
+              <p>Enable your daily task reminder preference.</p>
+            </div>
+
+            <label class="switch">
+              <input type="checkbox" id="dailyReminder" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <p id="notificationMessage" class="message" aria-live="polite"></p>
+        </section>
+
+        <!-- APPEARANCE SETTINGS -->
+        <section class="settings-card glass">
+          <div class="section-title">
+            <h2>🎨 Appearance</h2>
+            <p>Customize the look of your website.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="theme">Website Theme</label>
+
+            <select id="theme">
+              <option value="purple">Purple Theme</option>
+              <option value="blue">Blue Theme</option>
+              <option value="dark">Dark Theme</option>
+            </select>
+          </div>
+
+          <p id="themeMessage" class="message" aria-live="polite"></p>
+        </section>
+
+        <!-- ABOUT TASKVAULT -->
+        <section class="settings-card glass">
+          <div class="section-title">
+            <h2>ℹ️ About TaskVault</h2>
+          </div>
+
+          <p class="about-text">
+            TaskVault is a student task management website designed to help
+            college students organize their assignments, monitor their progress,
+            and remember their academic deadlines.
+          </p>
+
+          <p class="version">TaskVault Version 1.0</p>
+        </section>
+
+        <!-- LOGOUT -->
+        <div class="bottom-action">
+          <a href="home.html" class="logout-button" id="bottomLogout">
+            ↪ Log Out
+          </a>
+        </div>
+
+        <footer>
+          <p>© 2026 TaskVault | Student Task Management System</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="set.js"></script>
+  </body>
+</html>

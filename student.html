@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskVault - Student Login</title>
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Student Login</h1>
+
+      <p>Welcome to TaskVault!</p>
+      <p>Please enter your student information.</p>
+
+      <form id="loginForm">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="studentName"
+          placeholder="Enter your full name"
+          required
+        />
+
+        <label for="schoolID">School ID Number</label>
+        <input
+          type="text"
+          id="schoolID"
+          name="schoolID"
+          placeholder="Enter your school ID"
+          required
+        />
+
+        <button type="submit">Log In</button>
+      </form>
+
+      <a href="home.html">Back to Home</a>
+    </div>
+
+    <!-- CONNECT JAVASCRIPT -->
+    <script src="log.js"></script>
+  </body>
+</html>

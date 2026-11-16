@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskVault - Student Dashboard</title>
+
+    <link rel="stylesheet" href="stud.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="logo">
+          <h2>TaskVault</h2>
+          <p>Student Workspace</p>
+        </div>
+
+        <div class="profile">
+          <div class="profile-icon">👤</div>
+          <h3 id="studentGreeting">Hello, Student!</h3>
+          <p>Student Account</p>
+        </div>
+
+        <nav class="navigation">
+          <a href="student_dash.html" class="nav-link active">
+            <span>🏠</span> Dashboard
+          </a>
+
+          <a href="myass.html" class="nav-link">
+            <span>📚</span> My Assignments
+          </a>
+
+          <a href="add.html" class="nav-link"> <span>➕</span> Add Task </a>
+
+          <a href="cal.html" class="nav-link"> <span>📅</span> Calendar </a>
+
+          <a href="set.html" class="nav-link"> <span>⚙️</span> Settings </a>
+        </nav>
+
+        <a href="home.html" class="logout"> ↪ Log Out </a>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-header">
+          <div>
+            <h1>Student Dashboard</h1>
+            <p>Manage your school tasks and deadlines.</p>
+          </div>
+
+          <div class="date" id="currentDate">Loading date...</div>
+        </header>
+
+        <section class="welcome-section">
+          <div>
+            <h2>Welcome to TaskVault!</h2>
+            <p>Stay organized and keep track of your school activities.</p>
+          </div>
+
+          <a href="add.html" class="add-button"> + Add New Task </a>
+        </section>
+
+        <section class="summary-container">
+          <div class="summary-card completed-card">
+            <div class="card-icon">✓</div>
+            <div>
+              <h2 id="completedTasks">0</h2>
+              <p>Completed Tasks</p>
+            </div>
+          </div>
+
+          <div class="summary-card pending-card">
+            <div class="card-icon">📝</div>
+            <div>
+              <h2 id="pendingTasks">0</h2>
+              <p>Pending Tasks</p>
+            </div>
+          </div>
+
+          <div class="summary-card upcoming-card">
+            <div class="card-icon">⏰</div>
+            <div>
+              <h2 id="upcomingDeadlines">0</h2>
+              <p>Upcoming Deadlines</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-grid">
+          <div class="glass-panel assignments">
+            <div class="section-header">
+              <h2>Recent Assignments</h2>
+              <a href="myass.html">View All</a>
+            </div>
+
+            <div id="recentAssignments">
+              <p class="empty-message">Loading assignments...</p>
+            </div>
+          </div>
+
+          <div class="glass-panel deadlines">
+            <div class="section-header">
+              <h2>Upcoming Deadlines</h2>
+            </div>
+
+            <div id="upcomingList">
+              <p class="empty-message">Loading deadlines...</p>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <p>2026 TaskVault | Student Task Management System</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="dash.js"></script>
+  </body>
+</html>

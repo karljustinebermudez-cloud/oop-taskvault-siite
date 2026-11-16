@@ -1,0 +1,588 @@
+
+/* =================================
+   GENERAL SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    background-image: url("90595.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+
+/* =================================
+   DASHBOARD LAYOUT
+================================= */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 25px;
+}
+
+
+/* =================================
+   GLASS EFFECT
+================================= */
+
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    transition: background 0.3s ease;
+}
+
+
+/* =================================
+   SIDEBAR
+================================= */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.profile-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.profile h3 {
+    margin-bottom: 5px;
+}
+
+.profile p {
+    opacity: 0.8;
+}
+
+
+/* =================================
+   NAVIGATION
+================================= */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+nav a,
+.logout {
+    display: block;
+    padding: 14px;
+
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+.logout:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+nav a.active {
+    background: rgba(120, 80, 255, 0.8);
+}
+
+.logout {
+    margin-top: auto;
+}
+
+
+/* =================================
+   MAIN CONTENT
+================================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    opacity: 0.85;
+}
+
+
+/* =================================
+   CALENDAR CONTAINER
+================================= */
+
+.calendar-container {
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   CALENDAR HEADER
+================================= */
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.calendar-header h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.month-button {
+    padding: 10px 18px;
+
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.month-button:hover {
+    background: white;
+    color: #5836c9;
+    transform: scale(1.08);
+}
+
+
+/* =================================
+   CALENDAR GRID
+================================= */
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.weekdays {
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.weekdays div {
+    padding: 12px 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+
+/* =================================
+   CALENDAR DAYS
+================================= */
+
+.day {
+    min-height: 105px;
+    min-width: 0;
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.2s ease;
+}
+
+.day:not(.empty) {
+    cursor: pointer;
+}
+
+.day:hover:not(.empty) {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.025);
+}
+
+.day.empty {
+    background: transparent;
+    border: none;
+}
+
+.day-number {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+/* TODAY */
+
+.day.today {
+    border: 2px solid #69baff;
+    background: rgba(50, 150, 255, 0.2);
+}
+
+
+/* SELECTED DAY */
+
+.day.selected {
+    outline: 2px solid white;
+    outline-offset: -3px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =================================
+   ASSIGNMENT EVENTS
+================================= */
+
+.event {
+    display: block;
+    margin-top: 5px;
+    padding: 5px 6px;
+
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: bold;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event.pending {
+    background: #a78bfa;
+    color: #24134f;
+}
+
+.event.progress {
+    background: #ffc477;
+    color: #442600;
+}
+
+.event.completed {
+    background: #6ce0b2;
+    color: #073e2d;
+}
+
+.more-events {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    opacity: 0.85;
+}
+
+
+/* =================================
+   LEGEND
+================================= */
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.purple {
+    background: #a78bfa;
+}
+
+.orange-dot {
+    background: #ffc477;
+}
+
+.green-dot {
+    background: #6ce0b2;
+}
+
+.blue {
+    background: #69baff;
+}
+
+
+/* =================================
+   SELECTED DATE
+================================= */
+
+.selected-date {
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.selected-date h2 {
+    margin-bottom: 20px;
+}
+
+.selected-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.selected-task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.selected-task-info h3 {
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.selected-task-info p {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.selected-task-status {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.selected-task-status.pending {
+    background: #a78bfa;
+    color: #24134f;
+}
+
+.selected-task-status.progress {
+    background: #ffc477;
+    color: #442600;
+}
+
+.selected-task-status.completed {
+    background: #6ce0b2;
+    color: #073e2d;
+}
+
+
+/* =================================
+   UPCOMING DEADLINES
+================================= */
+
+.upcoming {
+    padding: 25px;
+}
+
+.upcoming h2 {
+    margin-bottom: 20px;
+}
+
+.upcoming-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 18px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.date-box {
+    min-width: 75px;
+    padding: 12px 18px;
+    text-align: center;
+
+    background: rgba(120, 80, 255, 0.7);
+    border-radius: 12px;
+}
+
+.date-box h3 {
+    font-size: 13px;
+}
+
+.date-box h2 {
+    margin: 5px 0 0;
+    font-size: 25px;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-info h3 {
+    overflow-wrap: anywhere;
+}
+
+.task-info p {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+.priority {
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.priority.high {
+    background: #ff8494;
+    color: #401020;
+}
+
+.priority.medium {
+    background: #ffc477;
+    color: #442600;
+}
+
+.priority.low {
+    background: #a6d8ff;
+    color: #073454;
+}
+
+
+/* =================================
+   EMPTY MESSAGE
+================================= */
+
+.empty-message {
+    padding: 15px 0;
+    opacity: 0.8;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    opacity: 0.75;
+    font-size: 13px;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calendar-container {
+        padding: 20px;
+    }
+
+    .day {
+        min-height: 85px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .calendar-grid {
+        gap: 4px;
+    }
+
+    .day {
+        min-height: 60px;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .event {
+        font-size: 8px;
+        padding: 3px;
+    }
+
+    .calendar-header h2 {
+        font-size: 19px;
+    }
+
+    .legend {
+        gap: 12px;
+    }
+
+    .upcoming-item,
+    .selected-task {
+        flex-wrap: wrap;
+    }
+
+    .date-box {
+        min-width: 65px;
+    }
+
+}
